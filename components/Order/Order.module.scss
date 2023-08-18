@@ -1,0 +1,28 @@
+.order {
+  & > div {
+    width: 314px;
+    & > div:first-child {
+      padding: 17px 27px;
+    }
+  }
+
+  li {
+    padding: 10px 27px !important;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1292px) {
+  .order {
+    & > div {
+      width: 188px;
+      & > div:first-child {
+        padding: 8px;
+      }
+    }
+
+    li {
+      padding: 8px !important;
+    }
+  }
+}

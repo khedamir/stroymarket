@@ -1,0 +1,271 @@
+.toggleCityMobile {
+  display: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1291px;
+  min-width: 428px;
+  margin: auto;
+  font-size: 19px;
+  height: 208px;
+  gap: 86px;
+
+  // overflow: hidden;
+
+  .Logo {
+    width: 262px;
+    height: auto;
+  }
+
+  .basketWrapper {
+    position: relative;
+  }
+
+  .headerBasketBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .mobileMenuItem,
+  .mobilePageTitle,
+  .mobileMenuBtn {
+    display: none;
+  }
+
+  &.dark {
+    background: rgba(42, 42, 49, 1);
+
+    nav {
+      .desktopToggleCity {
+      }
+    }
+
+    .navBar {
+      a.active {
+        border-bottom: 2px solid white;
+      }
+
+      a:after {
+        background: #fff;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navBarWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .navBar {
+    display: flex;
+    align-items: center;
+    width: 494px;
+
+    justify-content: space-between;
+
+    a {
+      position: relative;
+      height: 100%;
+      padding: 11px 0;
+      transition: 0.2s;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        transform: scale(0, 1);
+        transition: transform 0.4s;
+        background: rgba(7, 1, 73, 1);
+        transform-origin: right top;
+      }
+      &:hover:after {
+        transform: scale(1, 1);
+        transform-origin: left top;
+      }
+
+      &.active {
+        border-bottom: 2px solid rgba(7, 1, 73, 1);
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1292px) {
+  .header {
+    padding: 0 62px;
+    font-size: 16px;
+    gap: 30px;
+
+    .navBar {
+      width: 434px;
+    }
+
+    nav {
+      gap: 25px;
+    }
+
+    .navBarWrapper {
+      gap: 15px;
+    }
+
+    .Logo {
+      width: 190px;
+    }
+  }
+}
+
+@media (max-width: 1124px) {
+  .toggleCityMobile {
+    display: block;
+  }
+
+  .toggleCityDesktop {
+    display: none;
+  }
+  .header {
+    height: 73px;
+    gap: 16px;
+
+    .navBarWrapper {
+      gap: 0;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      .desktopToggleCity {
+        display: none;
+      }
+    }
+
+    nav {
+      input {
+        display: none;
+      }
+    }
+
+    .Logo {
+      display: none;
+    }
+
+    .navBar {
+      position: fixed;
+      z-index: 10000;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 76px 62px;
+      font-size: 22px;
+      transform: translateX(-100%);
+      transition: 0.4s transform ease;
+      gap: 32px;
+    }
+
+    .navBar.active {
+      transform: translateX(0);
+    }
+
+    .mobileMenuItem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+
+      &.switcher:hover {
+        opacity: 0.6;
+      }
+
+      .menuArrow {
+        position: absolute;
+        left: 0;
+        cursor: pointer;
+        // flex: 1;
+      }
+    }
+
+    .headerBasketBlock {
+      display: none;
+    }
+
+    .mobileMenuBtn {
+      display: block;
+      cursor: pointer;
+    }
+
+    &.dark {
+      .mobileMenuBtn {
+        * {
+          stroke: #fff;
+        }
+      }
+
+      .navBar {
+        background-color: #444456;
+      }
+    }
+
+    &.light {
+      .mobileMenuBtn {
+        * {
+          stroke: #070149;
+        }
+      }
+
+      .navBar {
+        background-color: #fff;
+      }
+    }
+
+    .mobilePageTitle {
+      display: block;
+      font-size: 20px;
+      flex: 1;
+      text-align: center;
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .mobileToggleCity {
+    padding: 0 52px;
+  }
+  .header {
+    padding: 0 34px;
+
+    .navBar {
+      padding: 50px 34px;
+    }
+
+    .mobileMenuItem {
+      .menuArrow {
+        // left: 34px;
+      }
+    }
+  }
+}

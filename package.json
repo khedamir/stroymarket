@@ -1,0 +1,43 @@
+{
+  "name": "complectstroy",
+  "version": "0.1.2",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@types/node": "17.0.45",
+    "@types/react": "18.0.35",
+    "@types/react-dom": "18.0.11",
+    "axios": "^1.3.4",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.2.4",
+    "next": "latest",
+    "next-sitemap": "^4.0.9",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-input-mask": "^3.0.0-alpha.2",
+    "react-paginate": "^8.1.5",
+    "sass": "^1.60.0",
+    "swiper": "^9.1.1",
+    "swr": "^2.1.3",
+    "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^7.0.0",
+    "@types/react-input-mask": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.29.4",
+    "husky": "^7.0.0",
+    "prettier": "2.6.2",
+    "prettier-plugin-organize-imports": "^3.2.2"
+  }
+}

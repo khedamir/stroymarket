@@ -1,0 +1,31 @@
+.input {
+  height: 59px;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 0 20px;
+  padding-right: 45px;
+  font-size: 19px;
+  outline: none;
+  border: 1px solid #fff;
+
+
+  &.dark {
+    color: #fff;
+    border-color: #fff;
+
+    &::placeholder {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+
+  &.light {
+    border-color:#070149;
+    color: #070149;
+
+    &::placeholder {
+      color: #070149;
+      opacity: 1;
+    }
+  }
+}

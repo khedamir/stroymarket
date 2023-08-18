@@ -1,0 +1,250 @@
+.productItem {
+  position: relative;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &.dark {
+    background: #3e3e46;
+  }
+
+  &.light {
+    background-color: #070149;
+    box-shadow: 0px -2px 12px -5px #070149;
+    color: #fff;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .rating {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+
+    .squery {
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-color: #fee821;
+      transform: rotate(45deg);
+    }
+
+    .ratingPercent {
+      position: absolute;
+      top: 66px;
+      right: 69px;
+      color: #56522a;
+    }
+  }
+
+  .productTop {
+    cursor: pointer;
+    .description {
+      padding: 16px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+      }
+
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        font-size: 14px;
+        color: #ffffff87;
+      }
+    }
+  }
+
+  .productBottom {
+    padding: 0 16px 64px;
+    .price {
+      font-size: 37px;
+
+      span {
+        font-size: 15px;
+        color: #aeaeae;
+        text-decoration: line-through;
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 41px;
+      margin-top: 31px;
+
+      &:hover {
+        background-color: #d9c40c;
+        color: #202431;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    .quantity {
+      display: flex;
+      height: 40px;
+      margin-top: 31px;
+
+      button {
+        margin: 0;
+        width: 40px;
+        height: 100%;
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fee821;
+        cursor: pointer;
+
+        &:first-child {
+          border-radius: 8px 0px 0px 8px;
+        }
+
+        &:last-child {
+          border-radius: 0px 8px 8px 0px;
+        }
+      }
+
+      & > span {
+        flex: 1;
+        height: 100%;
+        border: none;
+        border-bottom: 1px solid #fff;
+        border-top: 1px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: default;
+
+        input {
+          width: 50%;
+          text-align: right;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          color: #fff;
+          height: 100%;
+          font-size: 16px;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            display: none;
+          }
+        }
+
+        span {
+          width: 50%;
+          text-align: left;
+        }
+      }
+    }
+
+    .basketLink {
+      position: absolute;
+      width: calc(100% - 32px);
+      text-align: center;
+      margin-top: 12px;
+      text-align: center;
+      color: #fee821;
+      font-size: 17px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .productItem {
+    width: 168px;
+
+    &.dark {
+      .productBottom {
+        button {
+          svg * {
+            stroke: #fff;
+          }
+        }
+      }
+    }
+
+    &.light {
+      .productBottom {
+        button {
+          svg * {
+            stroke: #070149;
+          }
+        }
+      }
+    }
+
+    img {
+      width: 168px;
+      height: 120px;
+    }
+
+    .productTop {
+      .description {
+        padding: 9px;
+        h3 {
+          font-size: 13px;
+        }
+
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .productBottom {
+      padding: 0 9px 36px;
+
+      button {
+        margin-top: 16px;
+        height: 32px;
+
+        svg {
+          display: block;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+      .price {
+        font-size: 25px;
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .quantity {
+        margin-top: 16px;
+        height: 32px;
+        & > span {
+          font-size: 12px;
+          input {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .basketLink {
+        font-size: 12px;
+        width: calc(100% - 18px);
+        margin-top: 6px;
+      }
+    }
+  }
+}

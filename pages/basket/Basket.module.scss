@@ -1,0 +1,376 @@
+.wrapper.light {
+  .message {
+    background-color: #d3cff7;
+    color: #070149;
+  }
+}
+
+.wrapper {
+  max-width: 1292px;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: calc(100vh - 193px - 265px);
+
+  .message {
+    background-color: #212126;
+    padding: 24px 48px;
+    margin-top: 55px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1292px) {
+  .wrapper {
+    height: calc(100vh - 193px - 142px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    height: calc(100vh - 138px - 142px);
+  }
+}
+
+@media (max-width: 720px) {
+  .wrapper {
+    height: calc(100vh - 138px - 195px);
+
+    .message {
+      font-size: 15px;
+    }
+  }
+}
+
+.basket {
+  max-width: 1292px;
+  margin: auto;
+
+  &.light {
+    .deleteButton,
+    .deleteMobButton {
+      * {
+        stroke: #070149;
+      }
+    }
+
+    .productItem {
+      .descriptionList li {
+        color: #070149ab;
+
+        span {
+          color: #070149;
+        }
+      }
+    }
+  }
+
+  .productListHeader {
+    display: grid;
+    grid-template-columns: 212px 420px 102px 102px;
+    gap: 55px;
+    padding: 26px 56px 26px 90px;
+  }
+
+  .productCheckbox {
+    label::before {
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 100px 0;
+  }
+
+  .productsList {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .productWrapper {
+    display: flex;
+    align-items: center;
+    gap: 54px;
+  }
+
+  .productItem {
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 14px 66px 14px 14px;
+
+    .productDescription {
+      display: flex;
+      gap: 55px;
+      align-items: center;
+
+      .productName {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 28px;
+        width: 420px;
+
+        h2 {
+          margin: 0;
+        }
+
+        & > div {
+          width: 350px;
+
+          ul {
+            height: 200px;
+            overflow-y: scroll;
+
+            & {
+              overflow: auto;
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+            }
+
+            &::-webkit-scrollbar {
+              width: 0;
+              height: 0;
+            }
+          }
+        }
+
+        .descriptionItems {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 16px;
+
+          span:last-child {
+            width: 90px;
+          }
+        }
+      }
+
+       & > img {
+        box-shadow: 0px 0px 8px -5px #070149;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .productPrice {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 55px;
+        width: 320px;
+
+        .deleteButton {
+          cursor: pointer;
+        }
+
+        .deleteMobButton {
+          display: none;
+        }
+      }
+    }
+
+    .selectStatus {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1296px) {
+  .basket {
+    padding: 0 62px;
+
+    .productListHeader {
+      padding-left: 44px;
+      gap: 35px;
+      margin: auto;
+      grid-template-columns: 195px 340px 102px 122px;
+      padding: 26px 0;
+      padding-left: 30px;
+      justify-content: center;
+    }
+
+    .productWrapper {
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .productItem {
+      padding-right: 26px;
+      .productDescription {
+        gap: 25px;
+
+        .productName {
+          width: 350px;
+
+          & > div {
+            width: 340px;
+          }
+
+          h2 {
+            font-size: 22px;
+          }
+        }
+
+        .productPrice {
+          font-size: 20px;
+          gap: 25px;
+          width: 270px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1124px) {
+  .basket {
+    .productListHeader {
+      display: none;
+    }
+
+    .productItem {
+      .productDescription {
+        position: relative;
+        .productName {
+          width: 400px;
+          align-self: flex-start;
+
+          & > div {
+            width: 350px;
+          }
+        }
+
+        .productPrice {
+          position: absolute;
+          bottom: 15px;
+          left: 280px;
+          font-size: 22px;
+        }
+
+        & > img {
+          width: 250px;
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .basket {
+    padding: 0 34px;
+
+    .productWrapper {
+      position: relative;
+    }
+
+    .productCheckbox {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+
+      label::before {
+        width: 21px;
+        height: 21px;
+      }
+    }
+
+    .productItem {
+      width: 100%;
+      padding: 14px;
+
+      .productDescription {
+        gap: 40px;
+
+        .productPrice {
+          left: 290px;
+        }
+      }
+
+      .selectStatus {
+        display: block;
+        margin: 0 0 24px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .basket {
+    .productCheckbox {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+
+      label::before {
+        width: 21px;
+        height: 21px;
+      }
+    }
+
+    .productItem {
+      min-width: 356px;
+      padding: 14px;
+
+      .productDescription {
+        gap: 17px;
+
+        & > img {
+          width: 107px;
+          height: 83px;
+        }
+
+        .productName {
+          h2 {
+            font-size: 13px;
+          }
+
+          & > div {
+            display: none;
+          }
+        }
+
+        .productPrice {
+          font-size: 13px;
+          left: 125px;
+          align-items: flex-end;
+          width: 150px;
+
+          .deleteButton {
+            display: none;
+          }
+
+          .deleteMobButton {
+            display: block;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .selectStatus {
+        // margin: 0 0 24px 0;
+
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 625px) {
+  .basket {
+    .productItem {
+      .productDescription .productName {
+        width: 200px;
+      }
+    }
+  }
+}

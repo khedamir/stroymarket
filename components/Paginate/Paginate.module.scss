@@ -1,0 +1,62 @@
+.paginations {
+  max-width: 554px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #39393f;
+  border-radius: 40px;
+  padding: 12px;
+
+  .leftArrow,
+  .rightArrow {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0.2;
+
+    &.active {
+      pointer-events: all;
+      opacity: 1;
+
+      svg * {
+        stroke: #fff;
+      }
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .page {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-radius: 50%;
+    font-size: 20px;
+
+    &.active {
+      background: #1b1b23;
+    }
+  }
+
+  .rightArrow {
+    transform: rotate(180deg);
+  }
+}
+
+@media(max-width: 768px) {
+  .paginations {
+    max-width: 356px;
+  }
+}

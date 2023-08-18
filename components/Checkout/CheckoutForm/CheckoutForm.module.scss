@@ -1,0 +1,76 @@
+.checkoutForm {
+  display: grid;
+  grid-template-columns: 267px 267px;
+  gap: 32px;
+
+  &.dark {
+    input {
+      &::placeholder {
+        color: #ffffffb2;
+      }
+    }
+  }
+  &.light {
+    input {
+      &::placeholder {
+        color: #070149b2;
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+  }
+
+  input {
+    margin-top: 5px;
+    font-size: 15px;
+    height: 50px;
+
+    &::placeholder {
+      font-size: 15px;
+    }
+  }
+
+  .formButton {
+    grid-column: 2;
+    button {
+      width: 100%;
+      height: 63px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .checkoutForm {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+
+    .formButton {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -100px;
+      display: flex;
+      justify-content: center;
+
+      button {
+        width: 267px;
+      }
+    }
+  }
+}
+
+@media (max-width: 690px) {
+  .checkoutForm {
+    grid-template-columns: 1fr;
+
+    .formButton {
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,292 @@
+.wrapper {
+  &.dark {
+    .about {
+      background-color: #232329;
+    }
+  }
+
+  &.light {
+    .about {
+      background-color: #e8e6ff;
+      color: #07005e;
+    }
+
+    .contacts {
+      .links .linksList {
+        li span {
+          background-color: #e8e6ff;
+
+          svg * {
+            fill: #07005e;
+          }
+        }
+      }
+
+      .map span {
+        border-color: #07005e;
+      }
+    }
+  }
+
+  .about {
+    max-width: 1292px;
+    margin: auto;
+    padding: 49px 86px;
+    color: #f0f0f0;
+    font-size: 21px;
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      margin: 0 0 46px 0;
+    }
+
+    .content {
+      div {
+        display: flex;
+        gap: 69px;
+        margin-bottom: 62px;
+        align-items: flex-start;
+        justify-content: flex-end;
+        p {
+          line-height: 154%;
+          font-weight: 300;
+          margin: 0;
+          width: 46.5%;
+        }
+
+        img {
+          width: 38%;
+          height: auto;
+        }
+      }
+
+      div:nth-child(2n + 2) {
+        flex-direction: row-reverse;
+
+        p {
+          text-align: right;
+        }
+      }
+    }
+  }
+  .contacts {
+    max-width: 1292px;
+    margin: auto;
+    padding: 46px 61px;
+    display: flex;
+
+    h3 {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    .map,
+    .links {
+      width: 50%;
+      font-size: 27px;
+    }
+
+    .map {
+      span {
+        padding-right: 31px;
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        border-right: 2px solid #fff;
+
+        button {
+          width: 100%;
+          font-size: 23px;
+        }
+      }
+    }
+
+    .links {
+      padding: 0 0 0 66px;
+
+      .linksList {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 52px;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          & > svg {
+            margin-right: 32px;
+          }
+
+          &:last-child {
+            padding-left: 72px;
+          }
+        }
+
+        li {
+          .linkDescription {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 295px;
+            background-color: #1d1d25;
+            height: 86px;
+          }
+
+          span {
+            display: block;
+            height: 86px;
+            background-color: #1d1d25;
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+
+            &.copyBtn {
+              cursor: pointer;
+
+              svg {
+                pointer-events: none;
+              }
+
+              &.active {
+                opacity: 0.5;
+                cursor: wait;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .wrapper {
+    padding: 0 62px;
+
+    .about {
+      font-size: 18px;
+
+      .content div {
+        gap: 32px;
+      }
+    }
+
+    .contacts {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .map,
+      .links {
+        width: 100%;
+        font-size: 25px;
+        padding: 0;
+      }
+
+      .map span {
+        border-right: none;
+        padding-right: 0;
+        gap: 15px;
+
+        iframe {
+          width: 100%;
+        }
+      }
+
+      .links {
+        .linksList {
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .wrapper {
+    padding: 0 62px;
+
+    .about {
+      font-size: 24px;
+      padding: 36px;
+
+      .content div {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+        align-items: center;
+
+        img,
+        p {
+          width: 80%;
+        }
+
+        &:nth-child(2n + 2) {
+          flex-direction: column;
+
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .wrapper {
+    padding: 0;
+
+    .about {
+      img {
+        display: none;
+      }
+
+      .content div {
+        margin-bottom: 22px;
+        p {
+          width: 100%;
+          font-size: 17px;
+        }
+      }
+    }
+
+    .contacts {
+      padding: 36px;
+
+      h3 {
+        font-size: 25px;
+      }
+
+      .map p {
+        font-size: 15px;
+        text-align: start;
+      }
+
+      .map,
+      .links {
+        font-size: 20px;
+      }
+
+      .links .linksList li {
+        &:last-child {
+          padding-left: 16px;
+        }
+        & > svg {
+          margin-right: 16px;
+        }
+        span {
+          padding: 0 16px;
+          height: 54px;
+
+          &.linkDescription {
+            width: 226px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+@media (min-width: 1124px) {
+  .toggleCityHeader {
+    display: none;
+  }
+  .toggleCity {
+    position: relative;
+    z-index: 100;
+
+    .cross {
+      fill: #070149;
+      width: 20px;
+      top: 4px;
+      cursor: pointer;
+
+      * {
+        stroke: #00000000;
+      }
+    }
+
+    .selectCity {
+      color: #d88100;
+    }
+    svg {
+      position: absolute;
+      right: 4px;
+      bottom: 20px;
+    }
+    input {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      text-align: right;
+      padding: 0 25px 0 4px;
+      text-align: left;
+      border-radius: 0;
+      width: 200px;
+      transition: 0.3s all ease;
+    }
+
+    &.dark {
+      svg * {
+        stroke: #fff;
+      }
+
+      .cross {
+        fill: #fff;
+      }
+
+      .citiesList {
+        background-color: #2a2a31;
+      }
+    }
+
+    &.active {
+      input {
+        width: 232px;
+      }
+      .citiesList {
+        display: flex;
+        height: 252px;
+        padding: 24px;
+      }
+    }
+
+    .citiesList {
+      width: 110%;
+      left: -5%;
+      overflow-y: scroll;
+      height: 0;
+      padding: 0 24px;
+      position: absolute;
+      z-index: 200;
+      background-color: #fff;
+      transition: 0.3s all ease;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      li {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        svg {
+          position: static;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      //   height: 252px;
+
+      & {
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1124px) {
+  .toggleCityHeader {
+    text-align: center;
+    position: relative;
+    padding: 20px 78px;
+    background-color: #3f3f47;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    &.light {
+      background-color: #ededf1;
+
+      svg * {
+        stroke: #070149;
+      }
+    }
+
+    svg {
+      position: absolute;
+      left: 54px;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+  .toggleCity {
+    display: block;
+    padding: 0 78px;
+    background-color: #1d1d23;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: 78px;
+    }
+
+    &.light {
+      background-color: #fff;
+    }
+
+    &.light {
+      .citiesList {
+        background-color: #fff;
+      }
+    }
+
+    .citiesList {
+      height: 0;
+      width: 100%;
+      position: absolute;
+      overflow: hidden;
+      background-color: #2a2a31;
+      top: 70px;
+      left: 0;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: 0.3s all ease;
+      padding: 0 78px;
+    }
+
+    &.dark.active,
+    &.light.active {
+      background-color: transparent;
+      input {
+        background-color: transparent;
+      }
+    }
+
+    &.active {
+      input {
+        padding: 20px 4px;
+        text-align: left;
+        border-bottom: 1px solid;
+      }
+      .citiesList {
+        height: 100vh;
+        padding-top: 20px;
+
+        li {
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    &.light {
+      background-color: #ededf1;
+      input {
+        background-color: #ededf1;
+      }
+    }
+
+    &.dark {
+      svg * {
+        stroke: #fff;
+      }
+
+      background-color: #1d1d23;
+      input {
+        background-color: #1d1d23;
+      }
+    }
+
+    svg {
+      width: 20px;
+    }
+    input {
+      width: 100%;
+      border: none;
+      background-color: #1d1d23;
+      border-radius: 0;
+      padding: 20px 36px;
+      text-align: right;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .toggleCityHeader {
+    padding: 20px 52px;
+
+    svg {
+      left: 22px;
+    }
+  }
+  .toggleCity {
+    padding: 0 52px;
+
+    svg {
+      right: 52px;
+    }
+
+    .citiesList {
+      padding: 0 52px;
+    }
+  }
+}

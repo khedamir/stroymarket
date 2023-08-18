@@ -1,0 +1,78 @@
+
+.wrapper {
+  &.light {
+    .basket {
+      * {
+        stroke: #070149;
+      }
+    }
+  }
+
+  .basket {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 24px;
+
+    &.active {
+      padding: 8px 18px;
+      border-radius: 35px;
+
+      &:hover {
+        background-color: #2caf59;
+        color: #fff;
+
+        svg {
+          * {
+            stroke: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .animateBasket {
+    position: fixed;
+    top: 50px;
+    right: -200px;
+    background-color: #2caf59;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    border-radius: 61px;
+    z-index: 100;
+    font-size: 33px;
+    width: 173px;
+    height: 92px;
+    transition: 0.3s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    color: #fff;
+
+  }
+}
+@media (min-width: 1024px) {
+  .animateBasket{
+    &.active {
+      right: 50px;
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    .basket {
+      display: none;
+    }
+
+    .animateBasket {
+      width: 120px;
+      height: 70px;
+      gap: 12px;
+      font-size: 24px;
+
+      &.active {
+        top: 30px;
+        right: 34px;
+      }
+    }
+  }
+}

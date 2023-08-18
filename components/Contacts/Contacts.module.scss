@@ -1,0 +1,232 @@
+.contacts {
+  margin: 130px 0 0 0;
+  padding: 54px;
+  color: #fff;
+  min-width: 428px;
+
+  &.dark {
+    background-color: #14141e;
+  }
+
+  &.light {
+    background-color: #344c9f;
+  }
+
+  .wrapper {
+    max-width: 1291px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 38px;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    width: 618px;
+  }
+
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 84px 0 40px 0;
+    width: 100%;
+    gap: 40px;
+
+    &.sent {
+      .inputs {
+        input {
+          opacity: 0.6;
+        }
+
+        textarea {
+          opacity: 0.6;
+        }
+      }
+
+      button {
+        background-color: transparent;
+        border: 1px solid #00d849;
+        color: #00d849;
+      }
+
+      .addFile {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+    }
+
+    .inputs {
+      width: 578px;
+      display: grid;
+      grid-template-columns: repeat(2, 267px);
+      gap: 32px;
+
+      .error {
+        input {
+          border-color: #e3544b;
+          margin-bottom: 5px;
+        }
+      }
+
+      input {
+        font-size: 15px;
+        padding-right: 20px;
+        width: 100%;
+        height: 50px;
+        border: 1px solid #fff;
+        color: #fff;
+        margin-top: 8px;
+        font-family: 'Ubuntu';
+        font-weight: 300;
+
+        &::placeholder {
+          color: #fff;
+          opacity: 0.5;
+        }
+      }
+      .file {
+        display: none;
+      }
+
+      .comment {
+        grid-column: 1 /3;
+      }
+
+      .comment > textarea {
+        background-color: transparent;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        width: 100%;
+        height: 69px;
+        padding: 16px 23px;
+        border: 1px solid #fff;
+        color: #fff;
+        resize: none;
+        margin-top: 8px;
+
+        &::placeholder {
+          color: #fff;
+          opacity: 0.5;
+          font-family: 'Ubuntu';
+          font-weight: 300;
+        }
+      }
+
+      .addFile {
+        label {
+          height: 50px;
+          padding-left: 20px;
+          display: flex;
+          align-items: center;
+          gap: 31px;
+          border-radius: 8px;
+          width: 325px;
+          text-align: center;
+          vertical-align: middle;
+          border: 1px dashed #fff;
+          font-size: 17px;
+          font-weight: 300;
+          cursor: pointer;
+
+          &:hover {
+            border-style: solid;
+          }
+
+          &.active {
+            border-style: solid;
+            & > span {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              width: 75%;
+            }
+          }
+        }
+
+        & > span {
+          width: 325px;
+        }
+
+        &.error {
+          label {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    fieldset {
+      border-radius: 8px;
+      padding: 24px 32px 32px 32px;
+      width: 550px;
+      position: relative;
+      // top: -16px;
+
+      legend {
+        font-size: 33px;
+        font-weight: 400;
+      }
+      p {
+        margin: 0;
+        color: #ffffffe5;
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .contacts {
+    .form {
+      flex-direction: column;
+      align-items: center;
+
+      fieldset {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .contacts {
+    padding: 38px;
+    margin-top: 38px;
+
+    .title {
+      font-size: 20px;
+      width: 356px;
+    }
+    .form {
+      gap: 32px;
+
+      button {
+        width: 100%;
+      }
+      .inputs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        label {
+          width: 100%;
+        }
+
+        .addFile {
+          label {
+            width: 100%;
+          }
+
+          & > span {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

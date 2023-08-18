@@ -1,0 +1,125 @@
+.popup {
+  width: 218px;
+
+  &.dark {
+    background-color: #57575f;
+
+    .popupList {
+      background-color: #57575f;
+    }
+  }
+
+  &.light {
+    background-color: #fff;
+    .preview {
+      box-shadow: 0px 1px 4px rgba(17, 0, 216, 0.34);
+    }
+
+    .popupList {
+      background-color: #fff;
+
+      li {
+        label {
+          &:hover {
+            color: #07014962;
+          }
+        }
+      }
+    }
+  }
+
+  .preview {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.25);
+
+    & span:last-child {
+      perspective: 1000px;
+
+      img {
+        transition: transform 0.5s;
+        transform-style: preserve-3d;
+      }
+    }
+  }
+  position: relative;
+
+  .popupWrapper {
+    position: absolute;
+    overflow: hidden;
+    z-index: 100;
+    transition: 0.33s height ease;
+    width: 100%;
+    top: 47px;
+    height: 0;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.25);
+  }
+
+  .popupList {
+    width: 100%;
+    transition: 0.5s all ease;
+    width: 100%;
+    padding-bottom: 8px;
+
+    li {
+      padding: 8px;
+      width: 100%;
+      display: flex;
+
+      label {
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+        cursor: pointer;
+
+        &:hover {
+          color: #070149;
+        }
+      }
+
+      input {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &.active {
+    .preview {
+      & span:last-child {
+        img {
+          transform: rotateX(180deg);
+        }
+      }
+    }
+    .popupList {
+      li {
+      }
+      //   opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1292px) {
+  .popup {
+    width: 168px;
+    font-size: 15px;
+    .preview {
+      padding: 5px 10px;
+
+      span:first-child {
+        width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
